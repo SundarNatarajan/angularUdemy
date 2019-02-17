@@ -1,0 +1,58 @@
+npm install -g @angular/cli@latest
+
+ng new my-first-app
+
+ng serve
+ng generate componenet <name>
+
+
+		Component & DataBinding 
+		Directives
+		Services & Dependency Injection
+		Routing 
+		Observables
+		Forms
+		Pipes
+		Http
+		Authentication
+		Optimizations & NgModules
+		Deployment
+		Animation & Testing
+
+
+angular is full of @Component - this needs to be imported first import {Component } from '@angular/core'
+	a componenet has 3 items
+		selector - html tag 
+		templateUrl - html file path
+		styleUrls - css file faths - in array notation
+
+all ts files should contain export - so here componenet ts file can have export class AppComponent { other values to export }
+
+[(ngModel)]="name" -- to be import first to use in module.ts @NgModule - main file		 using @angular/forms - FormsModule - two way data binding
+
+bootstrap3 -- add under angular.json -> architect - build - styles
+
+ng generate will create new componenet with the class implements OnInit - ngOnInit
+
+
+main fies -- index.html --> main.ts --> app.module.ts (@ngModule decorator) --> then componenet
+
+
+DataBinding 
+	String Interpolation {{}} -- for data binding
+	Property Biding [property] = "data" --html element property value change
+	Event Binding - user reaction - btn click - (event) = expression
+	two way data binding - [(ngModel)] = "data"
+
+Directives 
+	@Directive decorator - for custom directive
+	angular core Directives
+	 	structural changing directive
+			ngIf -- *ngIf -- * must to say,; 
+			*ngIf - else , ng-template #tag
+		attribute changing directive
+			ngStyle - attribute / property changes- not the structural or DOM 
+			[ngStyle] -- since property changes - surround with  []
+			[ngStyle] = {} --> value should be key value pair with {}
+			[ngClass] = same as ngStyle
+			seems , ngStyle can be used within ngClass

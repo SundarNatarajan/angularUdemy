@@ -1,0 +1,9 @@
+.online {
+    color: white;
+    background-color: green    
+}
+
+.offline {
+    color: yellow;
+    background-color: red
+}

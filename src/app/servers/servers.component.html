@@ -1,0 +1,60 @@
+
+<!-- event based two way binding -->
+<label> ServerName</label>
+<!-- <input type="text" class="form-control"
+(input)="onUpdateServerName($event)">
+{{serverName}} -->
+
+<!-- ngModel based two way binding -->
+<p></p>
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<!-- {{serverName}} -->
+
+<p></p>
+
+<button class="btn btn-primart" [disabled]="!allowNewServer" (click) = "onAddServer()" >Add a New Server</button>
+<!-- string interpolation -->
+<!-- <p>{{allowNewServer}}</p>  -->
+
+
+<p [innerText]="allowNewServer"></p> <!-- property binding -->
+
+<p *ngIf="serverName && serverName.length && isNewServerAdded && isNewServerAdded.length; else noServer">
+    {{isNewServerAdded}} with the name {{serverName}}
+</p>
+
+<ng-template #noServer>
+    <p>
+        no server created
+    </p>
+</ng-template>
+
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="xs-col-32">
+            <app-server *ngFor="let server of servers"></app-server>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="xs-col-32">
+            <label> Diplay Details</label>
+            <button class="btn btn-primary"
+            (click) = "onDisplayBtnClick($event)">Display Servers</button>
+        </div>
+        <p *ngIf = "toggleDisplayBtn; else userClickData" >
+            Secret Pwd = tuna
+        </p>
+        <ng-template #userClickData>
+            <p *ngFor="let click of userClicksDetails; let i = index"
+            [ngStyle]= "{backgroundColor: i>=5 ?  'blue': 'transaparent'}"
+            [ngClass] = "{click : i>=5}"
+            >User clickd at {{i}} as {{click.time}} time</p>
+        </ng-template>
+    </div>
+</div>

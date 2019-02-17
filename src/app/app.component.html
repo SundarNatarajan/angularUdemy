@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="xs-col-12">
+            <h3>I am in the app.componenet.html page!</h3>
+            <hr>
+            <app-servers></app-servers>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<input type="text" class="form-control" [(ngModel)]="userName">
+<button class="btn btn-primary" [disabled]="!(userName && userName.length)" (click)="userName=''">Click to clear </button>
+
+<p>UserName is {{userName}}</p>
+
